@@ -9,8 +9,12 @@ export const Inner = styled.div`
   display: flex;
   padding: 70px 45px;
   flex-direction: column;
-  width: 815px;
+  width: 905px;
   margin: auto;
+
+  @media (max-width: 550px) {
+    padding: 70px 0;
+  }
 `;
 
 export const Item = styled.div`
@@ -39,7 +43,7 @@ export const Header = styled.div`
     width: 24px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     img {
       width: 16px;
     }
@@ -58,7 +62,7 @@ export const Body = styled.div`
   white-space: pre-wrap;
   user-select: none;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     font-size: 16px;
     line-height: 22px;
   }
@@ -72,7 +76,7 @@ export const Title = styled.h1`
   color: white;
   text-align: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     font-size: 35px;
   }
 `;
