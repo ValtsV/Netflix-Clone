@@ -20,10 +20,6 @@ export const Inner = styled.div`
 export const Item = styled.div`
   color: white;
   margin-bottom: 10px;
-
-  &:first-of-type {
-    margin-top: 30px;
-  }
 `;
 
 export const Header = styled.div`
@@ -79,4 +75,8 @@ export const Title = styled.h1`
   @media (max-width: 1000px) {
     font-size: 35px;
   }
+`;
+
+export const Frame = styled.div`
+  margin: 30px 0;
 `;

@@ -1,8 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { JumbotronContainer } from "./containers/JumbotronContainer";
-import { FooterContainer } from "./containers/FooterContainer";
-import { FaqContainer } from "./containers/FaqContainer";
 import * as ROUTES from "./routes/Routes";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";

@@ -4,7 +4,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
-  margin-top: 20px;
   flex-wrap: wrap;
 
   @media (max-width: 1000px) {
@@ -15,18 +14,18 @@ export const Container = styled.div`
 
 export const Frame = styled.div`
   display: flex;
+  justify-content: center;
   width: 100%;
   padding: 25px 30px;
 
   @media (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
-    padding: 10px 0;
-    margin: auto;
+    padding: 20px 0;
   }
 
   @media (max-width: 550px) {
-    padding: 10px 5%;
+    padding: 20px 5%;
   }
 `;
 

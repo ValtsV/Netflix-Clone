@@ -7,22 +7,23 @@ export const FaqContainer = () => {
   return (
     <Accordion>
       <Accordion.Title>Preguntas frecuentes</Accordion.Title>
-      {faqData.map((item) => (
-        <Accordion.Item key={item.id}>
-          <Accordion.Header>{item.header}</Accordion.Header>
-          <Accordion.Body>{item.body}</Accordion.Body>
-        </Accordion.Item>
-      ))}
-      <Accordion.Item></Accordion.Item>
+      <Accordion.Frame>
+        {faqData.map((item) => (
+          <Accordion.Item key={item.id}>
+            <Accordion.Header>{item.header}</Accordion.Header>
+            <Accordion.Body>{item.body}</Accordion.Body>
+          </Accordion.Item>
+        ))}
+      </Accordion.Frame>
       <OptForm>
         <OptForm.Text>
           ¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a
           Netflix o reactivarla.
         </OptForm.Text>
-        <OptForm.Frame>
-          <OptForm.Input placeholder="Correo electrónico" />
-          <OptForm.Button>PROBAR 30 DÍAS GRATIS</OptForm.Button>
-        </OptForm.Frame>
+        <OptForm.Frame
+          placeholder="Correo electrónico"
+          btnText="PROBAR 30 DÍAS GRATIS"
+        ></OptForm.Frame>
       </OptForm>
     </Accordion>
   );

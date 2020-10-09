@@ -21,6 +21,16 @@ OptForm.Text = function OptFormText({ children, ...otherProps }) {
   return <Text {...otherProps}>{children}</Text>;
 };
 
-OptForm.Frame = function OptFormFrame({ children, ...otherProps }) {
-  return <Frame {...otherProps}>{children}</Frame>;
+OptForm.Frame = function OptFormFrame({
+  placeholder,
+  btnText,
+  children,
+  ...otherProps
+}) {
+  return (
+    <Frame {...otherProps}>
+      <OptForm.Input placeholder={placeholder} />
+      <OptForm.Button>{btnText}</OptForm.Button>
+    </Frame>
+  );
 };

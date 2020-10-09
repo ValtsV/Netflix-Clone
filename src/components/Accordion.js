@@ -6,6 +6,7 @@ import {
   Inner,
   Header,
   Body,
+  Frame,
 } from "./Accordion.styles";
 
 const ToggleContext = createContext();
@@ -20,6 +21,10 @@ export const Accordion = ({ children, ...otherProps }) => {
 
 Accordion.Title = function AccordionTitle({ children, ...otherProps }) {
   return <Title {...otherProps}>{children}</Title>;
+};
+
+Accordion.Frame = function AccordionFrame({ children, ...otherProps }) {
+  return <Frame {...otherProps}> {children}</Frame>;
 };
 
 Accordion.Item = function AccordionItem({ children, ...otherProps }) {

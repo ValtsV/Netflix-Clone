@@ -1,38 +1,44 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-display:flex
-padding: 70px 56px;
-margin: auto;
-max-width: 1000px;
-flex-direction: column;
-
-@media(max-width: 1000px) {
-    padding: 70px 30px;
-}
-`;
-
-export const Column = styled.div`
   display: flex;
+  padding: 50px 56px;
+  margin: auto;
+  max-width: 1000px;
   flex-direction: column;
-  text-align: left;
-`;
-
-export const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  grid-gap: 15px;
+  width: 90%;
 
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 50px 45px 50px 45px;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
   }
 `;
 
+export const Frame = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+`;
+
 export const Link = styled.a`
+  width: 25%;
   color: #757575;
   margin-bottom: 20px;
+  padding-right: 12px;
   font-size: 13px;
   text-decoration: none;
+
+  @media (max-width: 740px) {
+    width: 33%;
+  }
+
+  @media (max-width: 500px) {
+    width: 50%;
+  }
 `;
 
 export const Title = styled.p`
@@ -44,7 +50,7 @@ export const Title = styled.p`
 export const Text = styled.p`
   font-size: 13px;
   color: #757575;
-  margin-bottom: 40px;
+  margin-top: 20px;
 `;
 
 export const Break = styled.p`
