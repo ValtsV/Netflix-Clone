@@ -4,7 +4,7 @@ import "./App.css";
 import App from "./App";
 import { GlobalStyles } from "./GlobalStyles";
 import { firebase } from "./lib/firebase.prod";
-import { FirebaseContext } from "./firebase/Firebase";
+import { FirebaseContext } from "./context/Firebase";
 
 ReactDOM.render(
   <>
