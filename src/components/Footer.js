@@ -1,8 +1,20 @@
 import React from "react";
-import { Container, Frame, Link, Title, Text, Break } from "./Footer.styles";
+import {
+  Container,
+  Frame,
+  Link,
+  Title,
+  Text,
+  Break,
+  Inner,
+} from "./Footer.styles";
 
 export const Footer = ({ children, ...otherProps }) => {
-  return <Container {...otherProps}>{children}</Container>;
+  return (
+    <Container {...otherProps}>
+      <Inner>{children}</Inner>
+    </Container>
+  );
 };
 
 Footer.Frame = function FooterFrame({ children, ...otherProps }) {

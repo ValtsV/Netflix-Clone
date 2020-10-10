@@ -3,14 +3,19 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   display: flex;
   padding: 50px 56px;
-  margin: auto;
-  max-width: 1000px;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
 
   @media (max-width: 1000px) {
     padding: 50px 45px 50px 45px;
   }
+`;
+
+export const Inner = styled.div`
+  max-width: 900px;
+  width: 90%;
+  margin: auto;
 
   @media (max-width: 550px) {
     width: 100%;
