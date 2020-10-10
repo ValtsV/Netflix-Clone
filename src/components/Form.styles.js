@@ -5,7 +5,7 @@ export const Container = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  min-height: 560px;
+  min-height: 590px;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   width: 100%;
@@ -19,7 +19,7 @@ export const Error = styled.div`
   background: #e87c03;
   border-radius: 4px;
   font-size: 14px;
-  margin: 16px 0;
+  margin-bottom: 16px;
   padding: 15px 20px;
 `;
 
@@ -43,7 +43,7 @@ export const Text = styled.p`
   font-weight: 500;
 `;
 
-export const TextSmall = styled.p`
+export const TextSmall = styled.span`
   display: inline;
   margin-top: 11px;
   font-size: 13px;
@@ -72,7 +72,7 @@ export const Submit = styled.button`
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
-  margin: 24px 0 13px;
+  margin: 13px 0;
   padding: 16px;
   border: 0;
   color: white;

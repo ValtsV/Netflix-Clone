@@ -1,17 +1,35 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { FirebaseContext } from "../firebase/Firebase";
 import Form from "../components/Form";
 import { FooterContainer } from "../containers/FooterContainer";
 import HeaderContainer from "../containers/HeaderContainer";
+import * as ROUTES from "../routes/Routes";
 
 export default function Signin() {
+  const history = useHistory();
+  const { firebase } = useContext(FirebaseContext);
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [moreInfo, setMoreInfo] = useState(false);
 
   const isInvalid = password === "" || emailAddress === "";
-  const handleSignin = (e) => {
+
+  const handleSignin = async (e) => {
     e.preventDefault();
+
+    try {
+      const res = await firebase
+        .auth()
+        .signInWithEmailAndPassword(emailAddress, password);
+
+      history.push(ROUTES.BROWSE);
+    } catch (err) {
+      setEmailAddress("");
+      setPassword("");
+      setError(err.message);
+    }
   };
 
   return (
@@ -29,7 +47,7 @@ export default function Signin() {
             placeholder="Contraseña"
             type="password"
             value={password}
-            onChange={({ target }) => setEmailAddress(target.value)}
+            onChange={({ target }) => setPassword(target.value)}
           />
           <Form.Submit disabled={isInvalid} type="submit">
             Iniciar sesión
@@ -62,7 +80,7 @@ export default function Signin() {
           </Form.TextSmall>
         )}
       </Form>
-      <FooterContainer></FooterContainer>
+      <FooterContainer />
     </HeaderContainer>
   );
 }
