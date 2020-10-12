@@ -28,7 +28,7 @@ export default function Signup() {
 
       await res.user.updateProfile({
         displayName: firstName,
-        avatar: Math.floor(Math.random() * 5) + 1,
+        photoURL: Math.floor(Math.random() * 5) + 1,
       });
 
       await history.push(ROUTES.BROWSE);

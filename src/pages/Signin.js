@@ -14,8 +14,6 @@ export default function Signin() {
   const [error, setError] = useState("");
   const [moreInfo, setMoreInfo] = useState(false);
 
-  console.log(firebase);
-
   const isInvalid = password === "" || emailAddress === "";
 
   const handleSignin = async (e) => {
