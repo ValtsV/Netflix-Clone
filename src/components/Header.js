@@ -13,6 +13,7 @@ import {
   Picture,
   Profile,
   Dropdown,
+  PlayButton,
 } from "./Header.styles";
 
 export default function Header({ bg = true, children, ...otherProps }) {
@@ -65,4 +66,8 @@ Header.Profile = function HeaderProfile({ children, ...otherProps }) {
 
 Header.Dropdown = function HeaderDropdown({ children, ...otherProps }) {
   return <Dropdown {...otherProps}>{children}</Dropdown>;
+};
+
+Header.PlayButton = function HeaderPlayButton({ children, ...otherProps }) {
+  return <PlayButton {...otherProps}>{children}</PlayButton>;
 };

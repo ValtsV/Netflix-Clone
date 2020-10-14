@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { SearchFrame, SearchIcon, SearchInput } from "./Search.styles";
+import { Container, SearchIcon, SearchInput } from "./Search.styles";
 
 export default function Search({ searchTerm, setSearchTerm, ...otherProps }) {
   const [searchActive, setSearchActive] = useState(false);
 
   return (
-    <SearchFrame {...otherProps}>
+    <Container {...otherProps}>
       <SearchIcon
         onClick={() => setSearchActive((searchActive) => !searchActive)}
       >
@@ -17,6 +17,6 @@ export default function Search({ searchTerm, setSearchTerm, ...otherProps }) {
         placeholder="Titulos, personas, géneros"
         active={searchActive}
       />
-    </SearchFrame>
+    </Container>
   );
 }

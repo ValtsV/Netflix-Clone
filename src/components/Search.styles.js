@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-export const SearchFrame = styled.div`
+export const Container = styled.div`
   display: flex;
   align-itens: center;
 

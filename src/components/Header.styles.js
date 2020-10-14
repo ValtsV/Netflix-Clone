@@ -159,3 +159,22 @@ export const Picture = styled.button`
   height: 32px;
   cursor: pointer;
 `;
+
+export const PlayButton = styled.button`
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+  background-color: #fff;
+  color: #000;
+  border-width: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  max-width: 150px;
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transfrom 0.5 ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;
