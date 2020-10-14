@@ -8,6 +8,7 @@ import FooterContainer from "./FooterContainer";
 import * as ROUTES from "../routes/Routes";
 import logo from "../fixtures/logo.svg";
 import Card from "../components/Card";
+import Player from "../components/Player";
 
 export function BrowseContainer({ slides }) {
   const { firebase } = useContext(FirebaseContext);
@@ -27,7 +28,7 @@ export function BrowseContainer({ slides }) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2000);
   }, [profile.displayName]);
 
   return profile.displayName ? (
@@ -75,37 +76,42 @@ export function BrowseContainer({ slides }) {
             maltratado por la ciudad de Gotham. Una serie de trágicos
             acontecimientos hacen crecer su ira contra la sociedad
           </Header.Text>
-          <Header.PlayButton>Reproducir</Header.PlayButton>
+          <Player>
+            <Player.Button />
+            <Player.Video src="/videos/bunny.mp4" />
+          </Player>
         </Header.Feature>
         <Header.Frame fadeDown={false} />
       </Header>
 
-      <Card.Group>
-        {slideRows.map((slideItem) => (
-          <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
-            <Card.Title>{slideItem.title}</Card.Title>
-            <Card.Entities>
-              {slideItem.data.map((item) => (
-                <Card.Item key={item.docId} item={item}>
-                  <Card.Image
-                    src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}
-                  />
-                  <Card.Meta>
-                    <Card.Subtitle>{item.title}</Card.Subtitle>
-                    <Card.Text>{item.description}</Card.Text>
-                  </Card.Meta>
-                </Card.Item>
-              ))}
-            </Card.Entities>
-            <Card.Feature category={category}>
-              {/* <Player>
-                <Player.Button />
-                <Player.Video src="/videos/bunny.mp4" />
-              </Player> */}
-            </Card.Feature>
-          </Card>
-        ))}
-      </Card.Group>
+      {!loading && (
+        <Card.Group>
+          {slideRows.map((slideItem) => (
+            <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
+              <Card.Title>{slideItem.title}</Card.Title>
+              <Card.Entities>
+                {slideItem.data.map((item) => (
+                  <Card.Item key={item.docId} item={item}>
+                    <Card.Image
+                      src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}
+                    />
+                    <Card.Meta>
+                      <Card.Subtitle>{item.title}</Card.Subtitle>
+                      <Card.Text>{item.description}</Card.Text>
+                    </Card.Meta>
+                  </Card.Item>
+                ))}
+              </Card.Entities>
+              <Card.Feature category={category}>
+                <Player>
+                  <Player.Button />
+                  <Player.Video src="/videos/bunny.mp4" />
+                </Player>
+              </Card.Feature>
+            </Card>
+          ))}
+        </Card.Group>
+      )}
       <FooterContainer />
     </>
   ) : (

@@ -129,7 +129,7 @@ export const FeatureGroup = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 30px 0;
+    margin-top: 30px;
   }
 `;
 
