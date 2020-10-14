@@ -4,6 +4,7 @@ import { FirebaseContext } from "../context/Firebase";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import Search from "../components/Search";
+import FooterContainer from "./FooterContainer";
 import * as ROUTES from "../routes/Routes";
 import logo from "../fixtures/logo.svg";
 import Card from "../components/Card";
@@ -23,11 +24,17 @@ export function BrowseContainer({ slides }) {
     setSlideRows(slides[category]);
   }, [slides, category]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, [profile.displayName]);
+
   return profile.displayName ? (
     <>
       {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
       <Header src="joker1" noShowOnSmall>
-        <Header.Frame>
+        <Header.Frame fadeDown={true}>
           <Header.Group>
             <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
             <Header.TextLink
@@ -70,6 +77,7 @@ export function BrowseContainer({ slides }) {
           </Header.Text>
           <Header.PlayButton>Reproducir</Header.PlayButton>
         </Header.Feature>
+        <Header.Frame fadeDown={false} />
       </Header>
 
       <Card.Group>
@@ -98,12 +106,9 @@ export function BrowseContainer({ slides }) {
           </Card>
         ))}
       </Card.Group>
+      <FooterContainer />
     </>
   ) : (
-    <SelectProfileContainer
-      user={user}
-      setProfile={setProfile}
-      setLoading={setLoading}
-    />
+    <SelectProfileContainer user={user} setProfile={setProfile} />
   );
 }

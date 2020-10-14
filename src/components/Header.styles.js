@@ -24,7 +24,12 @@ export const Container = styled.div`
   height: 92px;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: linear-gradient(
+    ${({ fadeDown }) =>
+      fadeDown
+        ? "rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)"
+        : "rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)"}
+  );
 
   a {
     display: flex;
@@ -33,6 +38,7 @@ export const Container = styled.div`
   @media (max-width: 1000px) {
     padding: 0 30px;
     height: 84px;
+    display: ${({ fadeDown }) => (fadeDown ? "flex" : "none")};
   }
 
   @media (max-width: 550px) {

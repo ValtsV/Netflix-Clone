@@ -22,9 +22,6 @@ export function SelectProfileContainer({ user, setProfile, setLoading }) {
                 displayName: user.displayName,
                 photoURL: user.photoURL,
               });
-              setTimeout(() => {
-                setLoading(false);
-              }, 800);
             }}
           >
             <Profiles.Picture src={user.photoURL} />

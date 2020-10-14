@@ -12,14 +12,20 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 50px 56px 0;
 
-  > ${Title} {
-    @media (max-width: 1000px) {
-      // margin-left: 30px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1000px) {
+    margin: 50px 30px 0;
+
+    &:first-of-type {
+      margin-top: 0;
     }
   }
 
-  &:last-of-type {
-    margin-bottom: 0;
+  @media (max-width: 550px) {
+    margin: 50px 20px 0;
   }
 `;
 
@@ -57,7 +63,7 @@ export const Text = styled.p`
   line-height: normal;
 `;
 
-//
+// -------------
 
 export const Feature = styled.div`
   display: flex;
@@ -111,12 +117,18 @@ export const FeatureClose = styled.button`
     filter: brightness(0) invert(1);
     width: 24px;
   }
+
+  @media (max-width: 999px) {
+    right: 0;
+    top: 24px;
+  }
 `;
 
 export const FeatureGroup = styled.div`
    {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin: 30px 0;
   }
 `;
@@ -125,7 +137,7 @@ export const Maturity = styled.div`
   border: 1px solid #fff;
   border-radius: 5px;
   width: 40px;
-  padding: 5px;
+  padding: 3px 5px;
   text-align: center;
   color: #fff;
   font-weight: bold;
@@ -151,9 +163,23 @@ export const Meta = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 `;
 
+// ------------------
+
 export const Entities = styled.div`
   display: flex;
   flex-direction: row;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+
+  @media (max-width: 999px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32.8%, 1fr));
+  }
+
+  @media (max-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
 `;
 
 export const Item = styled.div`
@@ -168,6 +194,11 @@ export const Item = styled.div`
     transform: scale(1.3);
     z-index: 11;
   }
+
+  &:last-of-type {
+    margin: 0;
+  }
+
   @media (min-width: 1200px) {
     &:hover ${Meta}, &:hover ${Text}, &:hover ${Subtitle} {
       display: block;
@@ -175,8 +206,23 @@ export const Item = styled.div`
     }
   }
 
-  &:last-of-type {
-    margin: 0;
+  //   @media (max-width: 999px) {
+  //     width: 32.8%;
+  //     margin: 0;
+
+  //     &:last-of-type:after {
+  //       &:last-of-type {
+  //         margin: 0;
+  //       }
+  //     }
+  //   }
+
+  @media (max-width: 999px) {
+    margin-bottom: 5px;
+
+    &:last-of-type {
+      margin-right: 5px;
+    }
   }
 `;
 
