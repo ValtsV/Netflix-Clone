@@ -3,11 +3,13 @@ import { SelectProfileContainer } from "./SelectProfileContainer";
 import { FirebaseContext } from "../context/Firebase";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
+import Search from "../components/Search";
 import * as ROUTES from "../routes/Routes";
 import logo from "../fixtures/logo.svg";
 
 export function BrowseContainer({ slides }) {
   const { firebase } = useContext(FirebaseContext);
+  const [searchTerm, setSearchTerm] = useState("");
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const user = firebase.auth().currentUser || {};
@@ -26,6 +28,11 @@ export function BrowseContainer({ slides }) {
             <Header.TextLink>Films</Header.TextLink>
           </Header.Group>
           <Header.Group>
+            {/* <Header.Search
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            /> */}
+            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Header.Profile>
               <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
