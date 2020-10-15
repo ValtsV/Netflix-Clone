@@ -7,8 +7,9 @@ import Search from "../components/Search";
 import FooterContainer from "./FooterContainer";
 import * as ROUTES from "../routes/Routes";
 import logo from "../fixtures/logo.svg";
-import Card from "../components/Card";
+import Card, { FeatureContext } from "../components/Card";
 import Player from "../components/Player";
+import CardFeature from "../components/CardFeature";
 
 export function BrowseContainer({ slides }) {
   const { firebase } = useContext(FirebaseContext);
@@ -102,12 +103,18 @@ export function BrowseContainer({ slides }) {
                   </Card.Item>
                 ))}
               </Card.Entities>
-              <Card.Feature category={category}>
+              {/* <Card.Feature category={category}>
                 <Player>
                   <Player.Button />
                   <Player.Video src="/videos/bunny.mp4" />
                 </Player>
-              </Card.Feature>
+              </Card.Feature> */}
+              <CardFeature category={category} context={FeatureContext}>
+                <Player>
+                  <Player.Button />
+                  <Player.Video src="/videos/bunny.mp4" />
+                </Player>
+              </CardFeature>
             </Card>
           ))}
         </Card.Group>
