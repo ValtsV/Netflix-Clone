@@ -8,7 +8,7 @@ export function SelectProfileContainer({ user, setProfile, setLoading }) {
   return (
     <>
       <Header bg={false}>
-        <Header.Frame>
+        <Header.Frame fadeDown={true}>
           <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
         </Header.Frame>
       </Header>
