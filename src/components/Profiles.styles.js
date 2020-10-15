@@ -40,6 +40,7 @@ export const Picture = styled.img`
   max-width: 150px;
   height: auto;
   border: 3px solid black;
+  border-radius: 3px;
   cursor: pointer;
 `;
 
